@@ -1,9 +1,0 @@
-langchain
-langchain-community
-langchain-chroma
-langchain-huggingface
-streamlit
-pypdf
-chromadb
-sentence-transformers
-ollama
