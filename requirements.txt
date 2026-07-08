@@ -1,0 +1,14 @@
+fastapi
+altair<5
+langchain
+langchain-chroma
+langchain-community
+langchain-huggingface
+ollama
+protobuf
+pypdf
+python-dotenv
+requests
+sentence-transformers
+streamlit==1.12.0
+uvicorn[standard]
