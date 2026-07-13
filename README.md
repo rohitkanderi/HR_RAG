@@ -13,9 +13,9 @@ Both modes share the same PDF ingestion pipeline: load PDFs, split them into chu
 - `ingest.py` - CLI ingestion script for loading and chunking PDFs into Chroma.
 - `query.py` - shared RAG retrieval and LLM answering logic.
 - `utils/` - PDF loader, splitter, embeddings, prompt, and Chroma helpers.
-- `HR_RAG_CLOUD/backend/` - FastAPI backend for cloud-style use.
-- `HR_RAG_CLOUD/frontend/` - Streamlit frontend that calls the FastAPI backend.
-- `HR_RAG_LOCAL/docs/` - place your PDF files here.
+- `RAG_CLOUD/backend/` - FastAPI backend for cloud-style use.
+- `RAG_CLOUD/frontend/` - Streamlit frontend that calls the FastAPI backend.
+- `RAG_LOCAL/docs/` - place your PDF files here.
 
 ## Setup
 
@@ -36,7 +36,7 @@ Copy-Item .env.example .env
 Add PDFs to:
 
 ```text
-HR_RAG_LOCAL/docs
+RAG_LOCAL/docs
 ```
 
 ## Build the PDF index
@@ -90,13 +90,13 @@ Any OpenAI-compatible endpoint can be used by changing `WEB_LLM_BASE_URL` and `W
 Start the FastAPI backend:
 
 ```powershell
-uvicorn HR_RAG_CLOUD.backend.api:app --reload
+uvicorn RAG_CLOUD.backend.api:app --reload
 ```
 
 Start the cloud frontend in another terminal:
 
 ```powershell
-streamlit run HR_RAG_CLOUD/frontend/app.py
+streamlit run RAG_CLOUD/frontend/app.py
 ```
 
-The frontend calls `http://localhost:8000` by default. Change `POLICYLENS_API_URL` if your backend runs elsewhere.
+The frontend calls `http://localhost:8000` by default. 
